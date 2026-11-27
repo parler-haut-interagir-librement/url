@@ -1,6 +1,6 @@
 {
     "name": "phil/url",
-    "description": "Web addresses for PHP: absolute http and https addresses normalised, kinds of address as enums that each carry their rule, international kinds included, and the kind of an address detected among enum sets",
+    "description": "Web addresses as clean, normalised values, with their kind detected: a Facebook page, a YouTube channel, a Mastodon account or a plain website.",
     "license": "MIT",
     "type": "library",
     "keywords": [
@@ -21,13 +21,16 @@
     "homepage": "https://ph-il.ca",
     "require": {
         "php": ">=8.5",
-        "ext-intl": "*",
         "ext-mbstring": "*",
         "ext-uri": "*",
-        "phil/enums": "^0.3@dev"
+        "phil/enums": "^0.3@dev",
+        "symfony/polyfill-intl-idn": "^1.43"
     },
     "require-dev": {
         "phpunit/phpunit": "^13.4"
+    },
+    "suggest": {
+        "ext-intl": "Faster international hosts than the polyfill, and their display in their own letters: without its spoof checker, an international host is displayed in ASCII"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
